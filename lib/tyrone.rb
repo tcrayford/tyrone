@@ -10,8 +10,8 @@ get '/' do
   use_in_file_templates!
   @mockups = Dir.glob(File.join(options.views, '*.haml')).map do |mockup|
     File.basename(mockup,'.*').gsub('_',' ')
-  end
-  haml :index
+  end.reject {|file| file == 'layout'}
+  haml :index, :layout => false
 end
 
 get '/mockups/:mockup' do |mockup|
@@ -27,7 +27,7 @@ __END__
     %title mockups
     %style{:type => 'text/css', :media => 'screen'}
       :sass
-        
+
         *
           :margin 0
           :padding 0
