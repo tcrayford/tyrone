@@ -11,4 +11,7 @@ Gem::Specification.new do |s|
   s.homepage = 'http://github.com/chrislloyd/tyrone'
   s.require_paths = ['lib']
   s.rubyforge_project = 'tyrone'
+
+  s.add_dependency 'sinatra', '>= 0.9.4'
+  s.add_dependency 'haml', '>= 2.2.2'
 end
