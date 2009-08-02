@@ -1,8 +1,13 @@
 gem 'haml', '2.2.2'; require 'haml'; require 'sass'
 
+set :haml => {:format => :html5}
+
 helpers do
   def mockup_path(mockup)
     "/mockups/#{mockup.gsub(' ','_')}"
+  end
+  def hidden
+    {:style => 'display:none'}
   end
 end
 
@@ -17,6 +22,17 @@ end
 get '/mockups/:mockup' do |mockup|
   haml mockup.to_sym
 end
+
+# Sass doesn't belong in mockups, it belongs in public
+
+get /^\/css\/(.+)\.css$/ do |style_file|
+  sass_file = File.join('public','css',"#{style_file}.sass")
+  pass unless File.exist?(sass_file)
+  content_type :css
+  sass File.read(sass_file)
+end
+
+get /\.sass$/ { pass }
 
 __END__
 
@@ -43,12 +59,13 @@ __END__
           :color #CCC
           :font-size 12px
           :line-height 20px
+          :font-size 14px
+          :line-height 20px
+          :color #999
+          :text-transform lowercase
           a
             :text-decoration none
-            :font-size 14px
             :color #333
-            :line-height 20px
-            :text-transform lowercase
             &:hover
               :border-bottom 1px solid #333
         .footer
@@ -61,6 +78,8 @@ __END__
   %body
     %h1 Mockups
     %ul
+      - if @mockups.empty?
+        There are no mockups yet. Add one in <code>/mockups</code>.
       - @mockups.each do |mockup|
         %li
           %a{:href => mockup_path(mockup)}= mockup
