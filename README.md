@@ -1,4 +1,4 @@
-![tyrone](http://github.com/chrislloyd/tyrone/raw/master/logo.png)
+![tyrone](http://cloud.github.com/downloads/chrislloyd/tyrone/logo.png)
 
 <small>a rapid prototyping fix. tyrone be great with uis. he loves em so much and will care the shit out of them. my boy tyrone is definitely the right man for the job, i aint playin. by [chris](http://chrislloyd.com.au).</small>
 
