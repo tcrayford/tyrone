@@ -32,7 +32,9 @@ get /^\/css\/(.+)\.css$/ do |style_file|
   sass File.read(sass_file)
 end
 
-get /\.sass$/ { pass }
+get /\.sass$/ do
+  pass
+end
 
 __END__
 
