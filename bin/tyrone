@@ -9,10 +9,10 @@ Pixii.called(:tyrone) do |make, opts|
 
   make.clone 'http://github.com/toolmantim/states.js/raw/master/states.js', 'public/js/states.js'
   make.clone 'http://jqueryjs.googlecode.com/files/jquery-1.3.2.min.js', 'public/js/jquery.js'
+  make.clone 'https://gist.github.com/159037.txt', 'public/css/reset.sass'
 
   make.template 'sinatra.rb.erb', "#{opts.project}.rb"
   make.template 'config.ru.erb', 'config.ru'
-  make.template 'reset.sass.erb', 'public/css/reset.sass'
 
   make.magic!
 end
