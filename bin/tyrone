@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+require 'rubygems'
+
+gem 'pixii', '>= 0.1.0'
+require 'pixii'
+
+Pixii.called(:tyrone) do |make, opts|
+  make.dir 'features', 'mockups', 'public', 'public/js', 'public/images', 'public/css'
+
+  make.clone 'http://github.com/toolmantim/states.js/raw/master/states.js', 'public/js/states.js'
+  make.clone 'http://jqueryjs.googlecode.com/files/jquery-1.3.2.min.js', 'public/js/jquery.js'
+
+  make.template 'sinatra.rb.erb', "#{opts.project}.rb"
+  make.template 'config.ru.erb', 'config.ru'
+  make.template 'reset.sass.erb', 'public/css/reset.sass'
+
+  make.magic!
+end
