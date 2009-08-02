@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.summary = 'care the shit out of your ui'
   s.author = 'Chris Lloyd'
   s.email = 'christopher.lloyd@gmail.com'
-  s.files = ['deps.rip', 'Rakefile', 'README.md', 'lib/tyrone.rb', 'bin/tyrone', 'templates/config.ru.erb', 'templates/reset.sass.erb', 'templates/sinatra.rb.erb']
+  s.files = ['deps.rip', 'Rakefile', 'README.md', 'lib/tyrone.rb', 'bin/tyrone', 'templates/config.ru.erb', 'templates/sinatra.rb.erb']
   s.has_rdoc = false
   s.homepage = 'http://github.com/chrislloyd/tyrone'
   s.require_paths = ['lib']
