@@ -2,6 +2,9 @@
 
 <small>a rapid prototyping fix. tyrone be great with uis. he loves em so much and will care the shit out of them. my boy tyrone is definitely the right man for the job, i aint playin. by [chris](http://chrislloyd.com.au).</small>
 
+
+its always better to work from the ui down. nobody cares about what database you are using or if you have 100% test coverage if the application itself sucks. tyrone likes uis. he helps you get up and running prototyping uis as quickly as possible so you can crunch the real problems in your app. tyrone loves you and ur uis
+
 ![screenshot](http://cloud.github.com/downloads/chrislloyd/tyrone/tyrone-0.1.0.png)
 
 ## employing tyrone
@@ -14,19 +17,11 @@ or
 
     rip install tyrone
 
-your project needs tyrone, fo real:
+to get tyrone started on your job:
 
-    gem 'tyrone'; require 'tyrone'
+    tyrone [NAME OF YOUR PROJECT]
 
-for sure its ready to go, alright? u may want to make ur app down wid da bidness: (dis goes in ur `config.ru`)
-
-    set :views => File.join(File.dirname(__FILE__), 'mockups')
-    set :app_file => # where you need tyrone to be, he will be there
-
-if you be a real player, you can knock out the old shit and add da new shit:
-
-    require 'tyrone'
-    get '/my-action' { ... }
+done.
 
 ## associates
 
