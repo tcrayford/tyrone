@@ -2,8 +2,9 @@
 
 <small>a rapid prototyping fix. tyrone be great with uis. he loves em so much and will care the shit out of them. my boy tyrone is definitely the right man for the job, i aint playin. by [chris](http://chrislloyd.com.au).</small>
 
-
 its always better to work from the ui down. nobody cares about what database you are using or if you have 100% test coverage if the application itself sucks. tyrone likes uis. he helps you get up and running prototyping uis as quickly as possible so you can crunch the real problems in your app. tyrone loves you and ur uis
+
+read [the associated article](http://chrislloyd.com.au/post/154530835/databases-are-for-pussies) to understand why you should use tyrone
 
 ![screenshot](http://cloud.github.com/downloads/chrislloyd/tyrone/tyrone-0.1.0.png)
 
