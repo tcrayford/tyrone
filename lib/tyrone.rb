@@ -64,7 +64,6 @@ __END__
           :font-size 14px
           :line-height 20px
           :color #999
-          :text-transform lowercase
           a
             :text-decoration none
             :color #333
@@ -81,7 +80,7 @@ __END__
     %h1 Mockups
     %ul
       - if @mockups.empty?
-        There are no mockups yet. Add one in <code>/mockups</code>.
+        there are no mockups yet. add one to <code>#{File.expand_path(options.views)}</code>.
       - @mockups.each do |mockup|
         %li
           %a{:href => mockup_path(mockup)}= mockup
