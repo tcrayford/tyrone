@@ -1,18 +1,36 @@
 #!/usr/bin/env ruby
 require 'rubygems'
 
-gem 'pixii', '>= 0.1.0'
+gem 'pixii', '>= 0.1.4'
 require 'pixii'
 
-Pixii.called(:tyrone) do |make, opts|
+# Loads the gemspec under Github like condtions.
+# Shamelessly stolen from sr/mg.
+def gemspec
+  @spec ||= begin
+    require 'rubygems/specification'
+    data = File.read File.join(File.dirname(__FILE__), '..', 'tyrone.gemspec')
+    spec = nil
+    Thread.new { spec = eval("$SAFE = 3\n#{data}")}.join
+    spec
+  end
+end
+
+Pixii.called(:tyrone, :version => gemspec.version) do |make, opts|
   make.dir 'features', 'mockups', 'public', 'public/js', 'public/images', 'public/css'
 
-  make.clone 'http://github.com/toolmantim/states.js/raw/master/states.js', 'public/js/states.js'
   make.clone 'http://jqueryjs.googlecode.com/files/jquery-1.3.2.min.js', 'public/js/jquery.js'
-  make.clone 'https://gist.github.com/159037.txt', 'public/css/reset.sass'
+  make.clone 'http://github.com/toolmantim/states.js/raw/master/states.js', 'public/js/states.js'
+  make.clone 'http://gist.github.com/160497.txt', 'public/js/grid.js'
+  make.clone 'http://gist.github.com/159037.txt', 'public/css/reset.sass'
+
+  make.clone '../templates/h_grid.gif', 'public/images/h_grid.gif'
+  make.clone '../templates/v_grid.gif', 'public/images/v_grid.gif'
 
   make.template 'sinatra.rb.erb', "#{opts.project}.rb"
   make.template 'config.ru.erb', 'config.ru'
+  make.template 'application.js.erb', 'public/js/application.js'
+  make.template 'layout.haml.erb', 'mockups/layout.haml'
 
   make.magic!
 end
