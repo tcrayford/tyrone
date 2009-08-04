@@ -14,5 +14,5 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'sinatra', '>= 0.9.4'
   s.add_dependency 'haml', '>= 2.2.2'
-  s.add_dependency 'pixii', '>= 0.1.0'
+  s.add_dependency 'pixii', '>= 0.1.4'
 end
