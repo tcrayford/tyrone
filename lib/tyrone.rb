@@ -4,7 +4,7 @@ set :haml => {:format => :html5}
 
 helpers do
   def mockup_path(mockup)
-    "/mockups/#{mockup.gsub(' ','_')}"
+    "/mockups/#{mockup.to_s.gsub(' ','_')}"
   end
   def hidden
     {:style => 'display:none'}
