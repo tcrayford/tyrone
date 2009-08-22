@@ -1,13 +1,8 @@
-gem 'haml', '2.2.2'; require 'haml'; require 'sass'
-
 set :haml => {:format => :html5}
 
 helpers do
   def mockup_path(mockup)
     "/mockups/#{mockup.to_s.gsub(' ','_')}"
-  end
-  def hidden
-    {:style => 'display:none'}
   end
 end
 
@@ -21,19 +16,6 @@ end
 
 get '/mockups/:mockup' do |mockup|
   haml mockup.to_sym
-end
-
-# Sass doesn't belong in mockups, it belongs in public
-
-get /^\/css\/(.+)\.css$/ do |style_file|
-  sass_file = File.join('public','css',"#{style_file}.sass")
-  pass unless File.exist?(sass_file)
-  content_type :css
-  sass File.read(sass_file)
-end
-
-get /\.sass$/ do
-  pass
 end
 
 __END__

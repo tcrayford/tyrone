@@ -1,3 +1,14 @@
-# Tyrone will care the shit out of you
-gem 'tyrone', '<%= version %>'
-require 'tyrone/app'
+# Tyrone cares the shit out of you
+
+helpers do
+  def hidden
+    {:style => 'display:none'}
+  end
+end
+
+get /^\/css\/(.+)\.css$/ do |style_file|
+  sass_file = File.join('public','css',"#{style_file}.sass")
+  pass unless File.exist?(sass_file)
+  content_type :css
+  sass File.read(sass_file)
+end

@@ -8,5 +8,4 @@ module Tyrone
   def templates
     File.join(File.dirname(__FILE__),'..','templates')
   end
-
 end

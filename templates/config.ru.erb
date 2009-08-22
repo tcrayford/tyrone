@@ -1,6 +1,14 @@
-require 'sinatra'
-
 __DIR__ = File.dirname(__FILE__)
+
+File.file?(gems_file = File.join(__DIR__,'.gems')) && File.read(gems_file).each do |gem_decl|
+  gem_name, version = gem_decl[/^([^\s]+)/,1], gem_decl[/--version ([^\s]+)/,1]
+  version ? gem(gem_name, version) : gem(gem_name)
+end
+
+require 'sinatra'
+require 'haml'
+require 'sass'
+require 'tyrone/app'
 
 set :run => false,
     :environment => :development,
@@ -9,6 +17,6 @@ set :run => false,
     :public => File.join(__DIR__, 'public'),
     :app_file => '<%= project %>.rb'
 
-require '<%= project %>.rb'
+require '<%= project %>'
 
 run Sinatra::Application
