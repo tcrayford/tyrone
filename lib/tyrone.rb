@@ -2,7 +2,7 @@ module Tyrone
   extend self
 
   def version
-    '0.3.2'
+    '0.4.1'
   end
 
   def templates

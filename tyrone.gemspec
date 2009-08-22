@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'tyrone'
-  s.version = '0.4.0'
+  s.version = '0.4.1'
 
   s.summary = 'care the shit out of your ui'
   s.author = 'Chris Lloyd'
