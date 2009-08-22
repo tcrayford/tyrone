@@ -19,6 +19,10 @@ Then, to get Tyrone started on your job:
 
 Bada bing!
 
+If you want the `states.js` or the `grid.js` you can do so like this:
+
+    tyrone [NAME OF JOB] --states --grid
+
 ## Features
 
 Tyrone believes in tough love. You're going to have to do alot of work yourself. However, he does want to give the pups a headstart. Your job _will_ use HTML 5 and comes with a HTML 5 `reset.css`. It's the way of the future and will save you time (see `input[placeholder]`). If you really object you can turn HTML 5 off, just by placeing this line in your Sinatra file:
@@ -37,7 +41,7 @@ Some mockup helpers are:
   * `hidden` &mdash; Just returns `{:style => 'display:none'}` so you can quickly hide elements. Useful when doing JS hiding and showing.
   * `mockup_path(mockup)` &mdash; Returns a URL to another mockup.
 
-And that's all.
+The `features` directory is where you start placing your user stories. The prototyping phase is a great time to start writing them.
 
 
 ## Associates
