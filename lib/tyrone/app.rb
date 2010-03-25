@@ -62,7 +62,7 @@ __END__
     %h1 Mockups
     %ul
       - if @mockups.empty?
-        there are no mockups yet. add one to <code>#{File.expand_path(options.views)}</code>.
+        There are no mockups yet. Add one to <code>#{File.expand_path(options.views)}</code>.
       - @mockups.each do |mockup|
         %li
           %a{:href => mockup_path(mockup)}= mockup
